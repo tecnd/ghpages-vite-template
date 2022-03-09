@@ -1,0 +1,2 @@
+# ghpages-vite-template
+Template with the basic Vite/React project and a GitHub action to build and deploy the site to GHPages. By default, force-commits the dist directory to the gh-pages branch and clobbers whatever was there.
