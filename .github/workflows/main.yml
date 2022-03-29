@@ -4,10 +4,8 @@ name: build-and-deploy
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push but only for the main branch
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -24,6 +22,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          lfs: false # Default behavior is to not fetch LFS, change to to true if you store assets in LFS
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.0.0
